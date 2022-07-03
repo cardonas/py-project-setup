@@ -1,5 +1,7 @@
 # PY-PROJECT-SETUP
 
+[![Build Status](https://dev.azure.com/cardonasj/py-project-setup/_apis/build/status/scardona91.py-project-setup?repoName=scardona91%2Fpy-project-setup&branchName=main)](https://dev.azure.com/cardonasj/py-project-setup/_build/latest?definitionId=10&repoName=scardona91%2Fpy-project-setup&branchName=main)
+
 ______________________________________________________________________
 
 ### Description:
