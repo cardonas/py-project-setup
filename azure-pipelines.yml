@@ -1,8 +1,8 @@
 trigger:
   branches:
-    includes: [main]
+    include: [main]
   tags:
-    include['*']
+    include: ['*']
 
 resources:
   repositories:
