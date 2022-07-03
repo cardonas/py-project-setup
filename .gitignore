@@ -20,7 +20,7 @@ result.xml
 .vscode/
 
 # virtual env
-venv/*
+venv*/*
 
 # build
 *.egg-info
