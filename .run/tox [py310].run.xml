@@ -1,0 +1,46 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tox [py39]" type="Tox" factoryName="Tox">
+    <module name="py-project-setup" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+    <arguments>
+      <array />
+    </arguments>
+    <runOnlyEnvs>
+      <array>
+        <option value="py39" />
+      </array>
+    </runOnlyEnvs>
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Pre-commit" run_configuration_type="ShConfigurationType" />
+    </method>
+  </configuration>
+  <configuration default="false" name="tox [py310]" type="Tox" factoryName="Tox">
+    <module name="py-project-setup" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+    <arguments>
+      <array />
+    </arguments>
+    <runOnlyEnvs>
+      <array>
+        <option value="py310" />
+      </array>
+    </runOnlyEnvs>
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Pre-commit" run_configuration_type="ShConfigurationType" />
+    </method>
+  </configuration>
+</component>
