@@ -16,4 +16,5 @@ jobs:
   - template: job--python-tox.yml@asottile
     parameters:
       toxenvs: [py39, py310]
+      coverage: false
       os: linux
