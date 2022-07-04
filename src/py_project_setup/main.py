@@ -15,7 +15,6 @@ def main() -> int:
 def create_root_level_structure(current_working_dir: str | Path) -> None:
     root_level_files = [
         ".pre-commit-config.yaml",
-        "requirements-dev.txt",
         ".gitignore",
         "tox.ini",
         "setup.cfg",
