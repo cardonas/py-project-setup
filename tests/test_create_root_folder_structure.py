@@ -14,7 +14,6 @@ def test_create_root_folders(create_test_dir):
         "pyproject.toml",
         "tests",
         "README.md",
-        "setup.py",
         "requirements-dev.txt",
         ".gitignore",
         "tox.ini",

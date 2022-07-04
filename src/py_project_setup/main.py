@@ -3,6 +3,8 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from file_templates.setup_py_template import setup_py_template
+
 
 def main() -> int:
     raise NotImplementedError
@@ -14,7 +16,6 @@ def create_root_level_structure(current_working_dir: str | Path) -> None:
         ".pre-commit-config.yaml",
         "pyproject.toml",
         "README.md",
-        "setup.py",
         "requirements-dev.txt",
         ".gitignore",
         "tox.ini",
@@ -45,3 +46,8 @@ def create_dunder_init_in_project_lib_folder(lib_path: Path) -> None:
 
 if "__main__" == "main":
     raise SystemExit(main())
+
+
+def create_setup_py(test_dir: Path) -> None:
+    with open(os.path.join(test_dir, "setup.py"), "w") as file:
+        file.write(setup_py_template)
