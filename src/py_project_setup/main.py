@@ -13,9 +13,7 @@ def main() -> int:
 
 def create_root_level_structure(current_working_dir: str | Path) -> None:
     root_level_files = [
-        "CONTRIBUTION.md",
         ".pre-commit-config.yaml",
-        "README.md",
         "requirements-dev.txt",
         ".gitignore",
         "tox.ini",
@@ -44,15 +42,25 @@ def create_dunder_init_in_project_lib_folder(lib_path: Path) -> None:
         file.write('__version__ = "0.0.1"')
 
 
-if "__main__" == "main":
-    raise SystemExit(main())
-
-
 def create_setup_py(current_working_dir: Path) -> None:
     with open(os.path.join(current_working_dir, "setup.py"), "w") as file:
         file.write(setup_py_template)
 
 
-def create_pyproject_toml(current_workign_dir: Path) -> None:
-    with open(os.path.join(current_workign_dir, "pyproject.toml"), "w") as file:
+def create_pyproject_toml(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, "pyproject.toml"), "w") as file:
         file.write(pyproject_toml_template)
+
+
+def create_contribution_md(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, "CONTRIBUTION.md"), "w") as file:
+        pass  # Create empty file
+
+
+def create_readme_md(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, "README.md"), "w") as file:
+        pass  # Create empty file
+
+
+if "__main__" == "main":
+    raise SystemExit(main())
