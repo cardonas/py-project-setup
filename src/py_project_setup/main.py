@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 from file_templates.pyproject_toml_template import pyproject_toml_template
+from file_templates.requirements_dev_txt_template import requirements_dev_txt_template
 from file_templates.setup_py_template import setup_py_template
 
 
@@ -60,6 +61,11 @@ def create_contribution_md(current_working_dir: Path) -> None:
 def create_readme_md(current_working_dir: Path) -> None:
     with open(os.path.join(current_working_dir, "README.md"), "w") as file:
         pass  # Create empty file
+
+
+def create_requirements_dev_txt(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, "requirements-dev.txt"), "w") as file:
+        file.write(requirements_dev_txt_template)
 
 
 if "__main__" == "main":
