@@ -38,3 +38,6 @@ build
 
 # pyenv
 .python-version
+
+# File system files
+.DS_Store
