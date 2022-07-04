@@ -11,7 +11,6 @@ def test_create_root_folders(create_test_dir):
     root_level_files = [
         "CONTRIBUTION.md",
         ".pre-commit-config.yaml",
-        "pyproject.toml",
         "tests",
         "README.md",
         "requirements-dev.txt",

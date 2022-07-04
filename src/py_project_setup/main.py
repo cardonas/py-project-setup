@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from file_templates.pyproject_toml_template import pyproject_toml_template
 from file_templates.setup_py_template import setup_py_template
 
 
@@ -14,7 +15,6 @@ def create_root_level_structure(current_working_dir: str | Path) -> None:
     root_level_files = [
         "CONTRIBUTION.md",
         ".pre-commit-config.yaml",
-        "pyproject.toml",
         "README.md",
         "requirements-dev.txt",
         ".gitignore",
@@ -48,6 +48,11 @@ if "__main__" == "main":
     raise SystemExit(main())
 
 
-def create_setup_py(test_dir: Path) -> None:
-    with open(os.path.join(test_dir, "setup.py"), "w") as file:
+def create_setup_py(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, "setup.py"), "w") as file:
         file.write(setup_py_template)
+
+
+def create_pyproject_toml(current_workign_dir: Path) -> None:
+    with open(os.path.join(current_workign_dir, "pyproject.toml"), "w") as file:
+        file.write(pyproject_toml_template)
