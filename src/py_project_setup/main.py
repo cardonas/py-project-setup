@@ -6,6 +6,7 @@ from pathlib import Path
 from file_templates.pyproject_toml_template import pyproject_toml_template
 from file_templates.requirements_dev_txt_template import requirements_dev_txt_template
 from file_templates.setup_py_template import setup_py_template
+from file_templates.tox_init_template import tox_ini_template
 
 
 def main() -> int:
@@ -65,6 +66,12 @@ def create_readme_md(current_working_dir: Path) -> None:
 def create_requirements_dev_txt(current_working_dir: Path) -> None:
     with open(os.path.join(current_working_dir, "requirements-dev.txt"), "w") as file:
         file.write(requirements_dev_txt_template)
+
+
+def create_tox_ini(current_working_dir: Path, py_versions: list[str]) -> None:
+    template = tox_ini_template.format(envlist=", ".join(py_versions))
+    with open(os.path.join(current_working_dir, "tox.ini"), "w") as file:
+        file.write(template)
 
 
 if "__main__" == "main":

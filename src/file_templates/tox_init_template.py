@@ -1,5 +1,5 @@
-[tox]
-envlist = py39, py310
+tox_ini_template = r"""[tox]
+envlist = {envlist}
 
 [pytest]
 minversion = 6.0
@@ -9,7 +9,7 @@ testpaths =
 [testenv]
 deps = pytest
 commands =
-    pytest -vv {posargs:--junitxml=result.xml}
+    pytest -vv {{posargs:--junitxml=result.xml}}
 
 [testenv:pre-commit]
 skip_install = true
@@ -40,12 +40,12 @@ deps =
 commands =
     python -c "import path; path.Path('dist').rmtree_p()"
     python -m build --wheel
-    python -m twine upload dist/* {posargs}
+    python -m twine upload dist/* {{posargs}}
 
 [testenv:local]
 skip_install = true
 deps = -rrequirements-dev.txt
 setenv =
-    PYTHONPATH = {toxinidir}/src
+    PYTHONPATH = {{toxinidir}}/src
 commands =
-    pytest {posargs}
+    pytest {{posargs}}"""
