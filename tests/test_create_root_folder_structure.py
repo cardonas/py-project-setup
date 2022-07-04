@@ -22,5 +22,6 @@ def test_create_root_folders(create_test_dir):
     ]
     create_root_level_structure(test_dir)
     actual = os.listdir(test_dir)
-    assert actual == root_level_files
+    for item in actual:
+        assert item in root_level_files
     shutil.rmtree(test_dir)
