@@ -1,5 +1,21 @@
-[tox]
-envlist = py39, py310
+import os
+
+from py_project_setup.main import create_tox_ini
+
+
+def test_create_tox_ini(create_test_dir):
+    test_dir = create_test_dir
+    python_version_list = ["py39", "py310", "py311"]
+    expected_path = os.path.join(test_dir, "tox.ini")
+    create_tox_ini(test_dir, python_version_list)
+    assert os.path.exists(expected_path)
+    with open(expected_path, "r") as file:
+        actual_content = file.read()
+    assert actual_content == expected_tox_ini
+
+
+expected_tox_ini = """[tox]
+envlist = py39, py310, py311
 
 [pytest]
 minversion = 6.0
@@ -48,4 +64,4 @@ deps = -rrequirements-dev.txt
 setenv =
     PYTHONPATH = {toxinidir}/src
 commands =
-    pytest {posargs}
+    pytest {posargs}"""
