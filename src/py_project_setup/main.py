@@ -38,5 +38,10 @@ def create_project_lib_folder_in_src(current_working_dir: Path) -> Path:
     return lib_path
 
 
+def create_dunder_init_in_project_lib_folder(lib_path: Path) -> None:
+    with open(lib_path.joinpath("__init__.py"), "w") as file:
+        file.write('__version__ = "0.0.1"')
+
+
 if "__main__" == "main":
     raise SystemExit(main())
