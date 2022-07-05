@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from file_templates.gitignore_template import gitignore_template
 from file_templates.pyproject_toml_template import pyproject_toml_template
 from file_templates.requirements_dev_txt_template import requirements_dev_txt_template
 from file_templates.setup_py_template import setup_py_template
@@ -16,8 +17,6 @@ def main() -> int:
 def create_root_level_structure(current_working_dir: str | Path) -> None:
     root_level_files = [
         ".pre-commit-config.yaml",
-        ".gitignore",
-        "tox.ini",
         "setup.cfg",
     ]
     root_level_dirs = ["src", "tests"]
@@ -54,12 +53,12 @@ def create_pyproject_toml(current_working_dir: Path) -> None:
 
 
 def create_contribution_md(current_working_dir: Path) -> None:
-    with open(os.path.join(current_working_dir, "CONTRIBUTION.md"), "w") as file:
+    with open(os.path.join(current_working_dir, "CONTRIBUTION.md"), "w"):
         pass  # Create empty file
 
 
 def create_readme_md(current_working_dir: Path) -> None:
-    with open(os.path.join(current_working_dir, "README.md"), "w") as file:
+    with open(os.path.join(current_working_dir, "README.md"), "w"):
         pass  # Create empty file
 
 
@@ -72,6 +71,11 @@ def create_tox_ini(current_working_dir: Path, py_versions: list[str]) -> None:
     template = tox_ini_template.format(envlist=", ".join(py_versions))
     with open(os.path.join(current_working_dir, "tox.ini"), "w") as file:
         file.write(template)
+
+
+def create_gitignore(current_working_dir: Path) -> None:
+    with open(os.path.join(current_working_dir, ".gitignore"), "w") as file:
+        file.write(gitignore_template)
 
 
 if "__main__" == "main":
