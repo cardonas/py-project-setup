@@ -9,7 +9,6 @@ from py_project_setup.main import create_root_level_structure
 def test_create_root_folders(create_test_dir):
     test_dir = create_test_dir
     root_level_files = [
-        ".pre-commit-config.yaml",
         "tests",
         "setup.cfg",
         "src",

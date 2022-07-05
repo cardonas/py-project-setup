@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 from file_templates.gitignore_template import gitignore_template
+from file_templates.pre_commit_config_template import pre_commit_config_template
 from file_templates.pyproject_toml_template import pyproject_toml_template
 from file_templates.requirements_dev_txt_template import requirements_dev_txt_template
 from file_templates.setup_py_template import setup_py_template
@@ -16,7 +17,6 @@ def main() -> int:
 
 def create_root_level_structure(current_working_dir: str | Path) -> None:
     root_level_files = [
-        ".pre-commit-config.yaml",
         "setup.cfg",
     ]
     root_level_dirs = ["src", "tests"]
@@ -76,6 +76,13 @@ def create_tox_ini(current_working_dir: Path, py_versions: list[str]) -> None:
 def create_gitignore(current_working_dir: Path) -> None:
     with open(os.path.join(current_working_dir, ".gitignore"), "w") as file:
         file.write(gitignore_template)
+
+
+def create_pre_commit_config(current_working_dir: Path) -> None:
+    with open(
+        os.path.join(current_working_dir, ".pre-commit-config.yaml"), "w"
+    ) as file:
+        file.write(pre_commit_config_template)
 
 
 if "__main__" == "main":
