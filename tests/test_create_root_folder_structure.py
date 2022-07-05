@@ -11,8 +11,6 @@ def test_create_root_folders(create_test_dir):
     root_level_files = [
         ".pre-commit-config.yaml",
         "tests",
-        ".gitignore",
-        "tox.ini",
         "setup.cfg",
         "src",
     ]
